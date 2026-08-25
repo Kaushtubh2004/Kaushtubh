@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0A0908;
+  color: #EDEAE4;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #B08D2E;
+  color: #0A0908;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0908;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2620;
+  border-radius: 4px;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.gold-text {
+  background: linear-gradient(120deg, #8A6D1F, #D9B24C 45%, #8A6D1F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-border {
+  border: 1px solid rgba(237, 234, 228, 0.09);
+}
+
+.hairline-grad {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(176, 141, 46, 0.5), transparent);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #D9B24C;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
